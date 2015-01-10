@@ -10,7 +10,7 @@
       "access_key": "{{user `aws_access_key`}}",
       "secret_key": "{{user `aws_secret_key` }}",
       "region": "us-east-1",
-      "source_ami": "ami-58146430",
+      "source_ami": "ami-686e1e00",
       "instance_type": "m3.medium",
       "ssh_username": "ubuntu",
       "ami_name": "ntp-curbix Ubuntu 14.04.1 LTS {{timestamp}}"
@@ -21,7 +21,7 @@
       "access_key": "{{user `aws_access_key`}}",
       "secret_key": "{{user `aws_secret_key` }}",
       "region": "us-east-1",
-      "source_ami": "ami-5a057532",
+      "source_ami": "ami-706e1e18",
       "instance_type": "m3.medium",
       "ssh_username": "ec2-user",
       "ami_name": "ntp-curbix FreeBSD 10.1-RELEASE {{timestamp}}"
@@ -32,7 +32,7 @@
       "type": "ansible-local",
       "playbook_file": "playbook.yml",
       "role_paths": "roles/ntp",
-      "extra_arguments":["ntp_mode=server"]
+      "extra_arguments":["--extra-vars \"ntp_mode=server\""]
     }
   ]
 }
