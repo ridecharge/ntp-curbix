@@ -5,3 +5,5 @@
   sudo: yes
   roles:
     - ntp
+   vars:
+     ntp_mode: server

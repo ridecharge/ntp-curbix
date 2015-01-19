@@ -31,10 +31,7 @@
     {
       "type": "ansible-local",
       "playbook_file": "playbook.yml",
-      "role_paths": "roles/ntp",
-      "extra_arguments": [
-        "--extra-vars \"ntp_mode=server\""
-      ]
+      "role_paths": "roles/ntp"
     }
   ]
 }
