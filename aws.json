@@ -6,25 +6,13 @@
   "builders": [
     {
       "type": "amazon-ebs",
-      "name": "ubuntu14lts",
       "access_key": "{{user `aws_access_key`}}",
       "secret_key": "{{user `aws_secret_key` }}",
       "region": "us-east-1",
-      "source_ami": "ami-70b7c918",
+      "source_ami": "ami-5e1b6336",
       "instance_type": "m3.medium",
       "ssh_username": "ubuntu",
       "ami_name": "ntp-curbix Ubuntu 14.04.1 LTS {{timestamp}}"
-    },
-    {
-      "type": "amazon-ebs",
-      "name": "freebsd10",
-      "access_key": "{{user `aws_access_key`}}",
-      "secret_key": "{{user `aws_secret_key` }}",
-      "region": "us-east-1",
-      "source_ami": "ami-46b4ca2e",
-      "instance_type": "m3.medium",
-      "ssh_username": "ec2-user",
-      "ami_name": "ntp-curbix FreeBSD 10.1-RELEASE {{timestamp}}"
     }
   ],
   "provisioners": [
@@ -32,6 +20,12 @@
       "type": "ansible-local",
       "playbook_file": "playbook.yml",
       "role_paths": "roles/ntp"
+    },
+    {    
+      "type": "shell",
+      "inline": [
+        "sudo docker pull sgarlick987/aws-startup-utils"
+      ]
     }
   ]
 }
