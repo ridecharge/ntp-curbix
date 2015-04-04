@@ -10,7 +10,7 @@
       "access_key": "{{user `aws_access_key`}}",
       "secret_key": "{{user `aws_secret_key` }}",
       "region": "us-east-1",
-      "source_ami": "ami-42f5df2a",
+      "source_ami": "ami-0c417164",
       "instance_type": "m3.medium",
       "ssh_username": "ubuntu",
       "ami_name": "ntp-curbix Ubuntu 14.04.1 LTS {{timestamp}}"
